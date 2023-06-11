@@ -72,6 +72,7 @@ const changeAll = () => {
     //         option.append(txt)
     //     })
     // }
+    //erik
     const changeOptions = () =>{
         option.replaceChildren();
         majorContainer.mens.optionTags.forEach((tagname)=>{
