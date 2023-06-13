@@ -104,16 +104,30 @@ let pic = document.querySelector('.polaroid')
 let textBox= document.querySelector('.textContainer')
 const products = document.querySelectorAll('.product')
 
+const changeAll = (person) => {
+    changeTopPic()
+    changeOptions()
+}
 
-
-
+// change top pic
 const changeTopPic = (person) => {
-    if(personr === "mens"){
+    if(person === "mens"){
         topPic.src = majorContainer.mens.headImage
     } else if(person === "womens"){
         topPic.src = majorContainer.womens.headImage
     } else if(person === "kids"){
         topPic.src = majorContainer.kids.headImage
+    }
+}
+
+// change option tags
+const changeOptions = (person) => {
+    if(person === 'mens'){
+        person = majorContainer.mens.optionTags
+    } else if(person === 'womens'){
+        person = majorContainer.womens.optionTags
+    } else if(person === 'kids'){
+        person = majorContainer.kids.optionTags
     }
 }
 
