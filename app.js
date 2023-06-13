@@ -97,7 +97,6 @@
 
 let mainImage = document.querySelector('.mainImg')
 let topPic = document.querySelector('.topPic')
-// let option = document.querySelector('.options')
 let options = document.querySelectorAll('.choice')
 let productDiv = document.querySelectorAll('.productDiv')
 let pic = document.querySelector('.polaroid')
@@ -105,8 +104,9 @@ let textBox= document.querySelector('.textContainer')
 const products = document.querySelectorAll('.product')
 
 const changeAll = (person) => {
-    changeTopPic()
-    changeOptions()
+    changeTopPic(person)
+    changeOptions(person)
+    changeProduct(person)
 }
 
 // change top pic
@@ -130,6 +130,52 @@ const changeOptions = (person) => {
         person = majorContainer.kids.optionTags
     }
 }
+
+// change products displayed
+const changeProduct = (person) => {
+    let product = document.createElement('img')
+    product.setAttribute('src', '')
+
+    if(person === "mens"){
+        person = majorContainer.mens.productImages
+    } else if(person === "womens"){
+        person = majorContainer.womens.productImages
+    } else if(person === 'kids'){
+        person = majorContainer.kids.productImages
+    }
+
+    for(let i = 0; i < person.length; i++){
+        productDiv[i].innerHTML = `<img src='${person[i].pic}'>
+        <p>${person[i].name}</p>`
+    }
+}
+
+// change text Description
+const changeText = (person) => {
+    if(person === "mens"){
+        person = majorContainer.mens.textDescription
+    }
+}
+
+
+// const changeName = (person) => {
+
+//     majorContainer.womens.optionTags.forEach((productName)=>{
+//     let txt = document.createElement('p')
+//     txt.setAttribute('src')
+//     textBox.innerHTML = productName
+
+//     })
+
+
+//     if(person === "mens"){
+//         person = majorContainer.mens.name
+//     } else if(person === "womens"){
+//         person = majorContainer.womens.name
+//     } else if(person === 'kids'){
+//         person = majorContainer.kids.name
+//     }
+// }
 
 
 // const changeAllMen = () => {
