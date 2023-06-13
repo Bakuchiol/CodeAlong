@@ -3,7 +3,7 @@
     // Dynamically change the Entire Site with a click of a button
     // General -- Mens -- Womens -- Children
 
-    let majorContainer ={
+    let majorContainer = {
         mens: {
             headImage: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
             optionTags: ["Boots", "Flannels", "Rugged Wear", "Shaving Cream"],
@@ -50,7 +50,7 @@
                 },
                 {
                     name: 'Shirts & Blouses',
-                    pic: "https://im.uniqlo.com/global-cms/spa/res3df290952450f5137bbcc72267d0392ffr.jpg",
+                    pic: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW4lMjB0JTIwc2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=700&q=60",
                 },
                 {
                     name: 'Shorts',
@@ -61,7 +61,7 @@
                     pic: "https://im.uniqlo.com/global-cms/spa/resd937213135757e86673f8d0f86c5671ffr.jpg",
                 }
             ],
-            textDescription: `2023 Spring/Summer Collection. A collection that moves freely between innerwear and clothes. Evolving beauty and comfort for all women.`,
+            textDescription: "2023 Spring/Summer Collection. A collection that moves freely between innerwear and clothes. Evolving beauty and comfort for all women.",
             lowImage: "https://api.fastretailing.com/ugc/v1/uq/gl/OFFICIAL_IMAGES/23041114957_official_feature_r-600-800"
         },
         kids: {
@@ -85,12 +85,12 @@
                     pic: "https://im.uniqlo.com/global-cms/spa/res749c33b0490300f311015c91e9257aaffr.jpg",
                 },
                 {
-                    name: 'Shorts',
-                    pic: "https://im.uniqlo.com/global-cms/spa/res0dc40777769aa428b5851384b4dde936fr.jpg",
+                    name: 'Socks',
+                    pic: "https://im.uniqlo.com/global-cms/spa/res40d3467b45545991f7cf615eb64c0d8dfr.jpg",
                 },
                 {
-                    name: 'Shorts',
-                    pic: "https://im.uniqlo.com/global-cms/spa/res0dc40777769aa428b5851384b4dde936fr.jpg",
+                    name: 'Dresses',
+                    pic: "https://im.uniqlo.com/global-cms/spa/res74dcb689dcd74598861c7a83c8330474fr.jpg",
                 }
             ],
             textDescription: `Kid-Approved Styles - Outfit them in comfortable looks they'll love wearing all season long.`,
