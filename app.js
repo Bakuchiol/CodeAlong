@@ -36,7 +36,7 @@
             textDescription : `A collection designed around everyday comfort, with a nod to authentic workwear traditions.`,
             lowImage: 'https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
         },
-        womens: {
+        women: {
             headImage: "https://im.uniqlo.com/global-cms/spa/res1fd53b8da747181302080cdc632b86bdfr.jpg",
             optionTags: ["T-Shirts", "UT: Graphic Tees", "Shirts & Blouses", "Shorts", "Pants"],
             productImages: [
@@ -62,7 +62,7 @@
                 }
             ],
             textDescription: `2023 Spring/Summer Collection. A collection that moves freely between innerwear and clothes. Evolving beauty and comfort for all women.`,
-            lowImage: "https://im.uniqlo.com/global-cms/spa/resd4fe71c89ef0c562ef7527297b23e530fr.jpg"
+            lowImage: "https://api.fastretailing.com/ugc/v1/uq/gl/OFFICIAL_IMAGES/23041114957_official_feature_r-600-800"
         },
         kids: {
             headImage: "https://im.uniqlo.com/global-cms/spa/resa1f97a1bbcf0e402ab9df31f14ce98d9fr.jpg",
@@ -87,6 +87,10 @@
                 {
                     name: 'Shorts',
                     pic: "https://im.uniqlo.com/global-cms/spa/res0dc40777769aa428b5851384b4dde936fr.jpg",
+                },
+                {
+                    name: 'Shorts',
+                    pic: "https://im.uniqlo.com/global-cms/spa/res0dc40777769aa428b5851384b4dde936fr.jpg",
                 }
             ],
             textDescription: `Kid-Approved Styles - Outfit them in comfortable looks they'll love wearing all season long.`,
@@ -103,18 +107,23 @@ let pic = document.querySelector('.polaroid')
 let textBox= document.querySelector('.textContainer')
 const products = document.querySelectorAll('.product')
 
+
+
+
 const changeAll = (person) => {
     changeTopPic(person)
     changeOptions(person)
     changeProduct(person)
+    changeText(person)
+    changeLowPic(person)
 }
 
 // change top pic
 const changeTopPic = (person) => {
     if(person === "mens"){
         topPic.src = majorContainer.mens.headImage
-    } else if(person === "womens"){
-        topPic.src = majorContainer.womens.headImage
+    } else if(person === "women"){
+        topPic.src = majorContainer.women.headImage
     } else if(person === "kids"){
         topPic.src = majorContainer.kids.headImage
     }
@@ -122,13 +131,18 @@ const changeTopPic = (person) => {
 
 // change option tags
 const changeOptions = (person) => {
-    if(person === 'mens'){
+    if(person === "mens"){
         person = majorContainer.mens.optionTags
-    } else if(person === 'womens'){
-        person = majorContainer.womens.optionTags
-    } else if(person === 'kids'){
+    } else if(person === "women"){
+        person = majorContainer.women.optionTags
+    } else if(person === "kids"){
         person = majorContainer.kids.optionTags
     }
+
+    for(let i = 0; i < person.length; i++){
+        options[i].innerText = person[i].toUpperCase()
+    }
+
 }
 
 // change products displayed
@@ -138,15 +152,15 @@ const changeProduct = (person) => {
 
     if(person === "mens"){
         person = majorContainer.mens.productImages
-    } else if(person === "womens"){
-        person = majorContainer.womens.productImages
+    } else if(person === "women"){
+        person = majorContainer.women.productImages
     } else if(person === 'kids'){
         person = majorContainer.kids.productImages
     }
 
     for(let i = 0; i < person.length; i++){
         productDiv[i].innerHTML = `<img src='${person[i].pic}'>
-        <p>${person[i].name}</p>`
+        <p class= "bold">${person[i].name}</p>`
     }
 }
 
@@ -154,129 +168,23 @@ const changeProduct = (person) => {
 const changeText = (person) => {
     if(person === "mens"){
         person = majorContainer.mens.textDescription
+    } else if(person === "women"){
+        person = majorContainer.women.textDescription
+    } else if(person === "kids"){
+        person = majorContainer.kids.textDescription
     }
+
+    textBox.innerHTML = `<h3> ${person} </h3>`
 }
 
-
-// const changeName = (person) => {
-
-//     majorContainer.womens.optionTags.forEach((productName)=>{
-//     let txt = document.createElement('p')
-//     txt.setAttribute('src')
-//     textBox.innerHTML = productName
-
-//     })
-
-
-//     if(person === "mens"){
-//         person = majorContainer.mens.name
-//     } else if(person === "womens"){
-//         person = majorContainer.womens.name
-//     } else if(person === 'kids'){
-//         person = majorContainer.kids.name
-//     }
-// }
-
-
-// const changeAllMen = () => {
-//     changeTopPic()
-//     changeOptions()
-//     product()
-// }
-//     const changeTopPic = () =>{
-//         let newimage = document.createElement('img')
-//             newimage.setAttribute('src', majorContainer.mens.headImage)
-//             newimage.setAttribute('class','topPic')
-//         mainImage.replaceWith(newimage)
-//     }
-
-//     const changeOptions = () =>{
-//         option.replaceChildren();
-//         majorContainer.mens.optionTags.forEach((tagname)=>{
-//             let txt = document.createElement('div')
-//             txt.innerHTML = tagname
-//             option.append(txt)
-//         })
-//     }
-
-//     const product= () => {
-//         majorContainer.mens.productImages.forEach((obj)=>{
-//             let shopBox  = document.createElement('img')
-//             shopBox.setAttribute('src',obj.pic)
-//             shopBox.setAttribute('class','product')
-//             productBox.append(shopBox)
-//         })
-
-//     }
-// ////// WOMEN
-// const changeAllWomen = () => {
-//     changeTopPicW()
-//     changeOptionsW()
-//     productW()
-// }
-//     const changeTopPicW = () =>{
-//         // createImage 
-//         let newimage = document.createElement('img')
-//             newimage.setAttribute('src', majorContainer.womens.headImage)
-//             newimage.setAttribute('class','topPic')
-//         // replaceWith current
-//         mainImage.replaceWith(newimage)
-
-//     }
-//     const changeOptionsW = () =>{
-//         option.replaceChildren();
-//         majorContainer.womens.optionTags.forEach((tagname)=>{
-//             // CREATE ELEMENT
-//             let txt = document.createElement('p')
-//             txt.innerHTML = tagname
-//             // REPLACE ELEMENT WITH NEW ELEMENT
-//             option.append(txt)
-//         })
-//     }
-
-//     const productW= () => {
-//         majorContainer.womens.productImages.forEach((obj)=>{
-//             let shopBox  = document.createElement('img')
-//             shopBox.setAttribute('src',obj.pic)
-//             shopBox.setAttribute('class','product')
-//             productBox.append(shopBox)
-//         })
-
-//     }
-
-// /////////// KIDS
-// const changeAllKids = () => {
-//     changeTopPicK()
-//     changeOptionsK()
-//     productK()
-// }
-//     const changeTopPicK = () =>{
-//         // createImage 
-//         let newimage = document.createElement('img')
-//             newimage.setAttribute('src', majorContainer.kids.headImage)
-//             newimage.setAttribute('class','topPic')
-//         // replaceWith current
-//         mainImage.replaceWith(newimage)
-
-//     }
-
-// const changeOptionsK = () =>{
-//     option.replaceChildren();
-//     majorContainer.kids.optionTags.forEach((tagname)=>{
-//         // CREATE ELEMENT
-//         let txt = document.createElement('div')
-//         txt.innerHTML = tagname
-//         // REPLACE ELEMENT WITH NEW ELEMENT
-//         option.append(txt)
-//     })
-// }
-
-// const productK= () => {
-//     majorContainer.kids.productImages.forEach((obj)=>{
-//         let shopBox  = document.createElement('img')
-//         shopBox.setAttribute('src',obj.pic)
-//         shopBox.setAttribute('class','product')
-//         productBox.append(shopBox)
-//     })
-
-// }
+// change low pic
+const changeLowPic = (person) => {
+    if(person === "mens"){
+        person = majorContainer.mens.lowImage
+    } else if(person === "women"){
+        person = majorContainer.women.lowImage
+    } else if(person === "kids"){
+        person = majorContainer.kids.lowImage
+    }
+    pic.src = person
+}

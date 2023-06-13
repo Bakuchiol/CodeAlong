@@ -1,83 +1,96 @@
 .navbar{
-    border:solid black;
-    border-width:.2px;
+    border: 2px solid black;
+    /* border-width:.2px; */
     height:40px;
-    margin:1em;
+    /* margin:1em; */
     display:flex;
 }
 .tabs{
-    border:solid black;
+    border: 1px solid black;
     border-radius:22px;
-    border-width:.2px;
+    /* border-width:.2px; */
     text-align:center;
-    padding-top:7px;
+    /* padding-top:7px; */
+    padding: 5px;
     width:120px;
 }
 .tabs:hover{
-    border:solid black;
-    border-radius:22px;
-    border-width:.2px;
-    text-align:center;
+    /* border:solid black; */
+    /* border-radius:22px; */
+    /* border-width:.2px; */
+    /* text-align:center; */
     background-color:green;
     color:white;
-    padding-top:7px;
-    width:120px;
+    /* padding-top:7px; */
+    /* width:120px; */
+    cursor: pointer;
 }
 .options{
-    border:solid green;
-    border-width:.2px;
+    border: 2px solid green;
+    /* border-width:.2px; */
     /* height:340px; */
-    margin:1em;
-    display:flex;
+    margin: 1em;
+    display: flex;
     justify-content: space-around;
 }
 .mainImg{
-    border:solid blue;
-    border-width:.2px;
-    height:440px;
-    margin:1em;
+    border: 2px solid blue;
+    /* border-width:.2px; */
+    height: 440px;
+    margin: 1em;
 }
 .productContainer{
-    border:solid red;
-    border-width:.2px;
-    height:740px;
-    margin:1em;
-    display:flex;
-    flex-wrap:wrap;
+    border: 2px solid red;
+    /* border-width:.2px; */
+    /* height:740px; */
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
 }
 .displayMain{
-    border:solid peru;
-    border-width:.2px;
-    height:340px;
-    margin:1em;
-    display:flex;
+    border: 2px solid peru;
+    /* border-width:.2px; */
+    height: 340px;
+    margin: 1em;
+    display: flex;
     justify-content: space-between;
 }
 .logoContainer{
-    border:solid purple;
-    width:40%;
+    border: 2px solid purple;
+    width: 60%;
 }
 .tabContainer{
-border:solid pink;
-width:60%;
-display: flex;
-justify-content: space-evenly;
+    border: solid pink;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .topPic{
     width:100%;
     height:100%;
 }
-.product{
-    border:solid orange;
-    height:350px;
-    width:30%;
-    margin:10px;
+.productDiv{
+    border: solid orange;
+    /* height:350px; */
+    width: 30%;
+    margin: 10px;
 }
 .leftImage{
     border:solid grey;
-    width:30%;
+    width: 30%;
 }
 .textContainer{
-    border:solid black;
-    width:60%
+    border: solid black;
+    width: 60%
+}
+img {
+    height: inherit;
+    width: 100%;
+}
+p, h3 {
+    text-align: center;
+}
+.bold {
+    font-weight: bold;
 }
